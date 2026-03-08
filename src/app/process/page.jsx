@@ -5,10 +5,12 @@ import { FadeIn } from '@/components/FadeIn'
 import { GridList, GridListItem } from '@/components/GridList'
 import { List, ListItem } from '@/components/List'
 import { PageIntro } from '@/components/PageIntro'
+import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { TagList, TagListItem } from '@/components/TagList'
 import { RootLayout } from '@/components/RootLayout'
+import { loadArticles } from '@/lib/mdx'
 import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
@@ -185,68 +187,15 @@ function Deliver() {
   )
 }
 
-function Values() {
-  return (
-    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-linear-to-b from-neutral-50">
-      </div>
-
-      <SectionIntro
-        eyebrow="Our Values"
-        title="Quality, trust, and results — every time."
-      >
-        <p>
-          These are the core principles that guide every project we take on
-          at UpthriveWork. They aren't just words — they're the foundation
-          of everything we do.
-        </p>
-      </SectionIntro>
-
-      <Container className="mt-24">
-        <GridList>
-          <GridListItem title="On-Time Delivery">
-            Deadlines are sacred. We plan every project with buffer time
-            built in so you always receive your work before it's due —
-            no excuses, no exceptions.
-          </GridListItem>
-          <GridListItem title="100% Original Work">
-            Every assignment, project, and presentation is created from
-            scratch specifically for you. We never reuse or recycle work
-            from previous clients.
-          </GridListItem>
-          <GridListItem title="Full Confidentiality">
-            Your privacy is our priority. We never share your personal
-            information, or identity with anyone —
-            guaranteed.
-          </GridListItem>
-          <GridListItem title="Affordable for Students">
-            We know students have tight budgets. Our pricing is transparent,
-            fair, and designed to be accessible without compromising on
-            quality.
-          </GridListItem>
-          <GridListItem title="Expert-Led Every Time">
-            Every project is handled by a domain expert — not a generalist.
-            The right person with the right skills works on your specific
-            requirement.
-          </GridListItem>
-          <GridListItem title="24/7 Availability">
-            Students work at all hours, and so do we. Our team is available
-            round the clock across all time zones — reach us anytime via
-            WhatsApp or email.
-          </GridListItem>
-        </GridList>
-      </Container>
-    </div>
-  )
-}
-
 export const metadata = {
   title: 'Our Process',
   description:
     'At UpthriveWork, we follow a simple three-step process — Understand, Build, and Deliver — to ensure every student gets exactly what they need, on time.',
 }
 
-export default function Process() {
+export default async function Process() {
+  let blogArticles = (await loadArticles()).slice(0, 2)
+
   return (
     <RootLayout>
       <PageIntro eyebrow="Our Process" title="How we work with you">
@@ -263,7 +212,12 @@ export default function Process() {
         <Deliver />
       </div>
 
-      <Values />
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="From our blog"
+        intro="Stay up to date with the latest tips, guides, and insights from our team of experts — designed to help students navigate academic and technical challenges with confidence."
+        pages={blogArticles}
+      />
 
       <ContactSection />
     </RootLayout>

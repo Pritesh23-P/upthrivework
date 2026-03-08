@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Blockquote } from '@/components/Blockquote'
@@ -8,10 +7,10 @@ import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { Testimonial } from '@/components/Testimonial'
+import { PageLinks } from '@/components/PageLinks'
 import { RootLayout } from '@/components/RootLayout'
 import { formatDate } from '@/lib/formatDate'
-import { loadCaseStudies } from '@/lib/mdx'
+import { loadCaseStudies, loadArticles } from '@/lib/mdx'
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -31,8 +30,7 @@ function CaseStudies({ caseStudies }) {
                     <div
                       className="flex h-16 w-16 flex-none items-center justify-center rounded-2xl text-xl font-bold text-white"
                       style={{
-                        background:
-                          'linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%)',
+                        background: 'linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%)',
                       }}
                     >
                       {caseStudy.client.charAt(0)}
@@ -87,61 +85,6 @@ function CaseStudies({ caseStudies }) {
   )
 }
 
-const clients = [
-  { name: 'University of Central Florida', short: 'UCF', country: 'USA' },
-  { name: 'University of Portsmouth', short: 'UoP', country: 'UK' },
-  { name: 'Deakin University', short: 'DU', country: 'Australia' },
-  { name: 'York University', short: 'YU', country: 'Canada' },
-  { name: 'University of Paderborn', short: 'UoP', country: 'Germany' },
-  { name: 'NUI Galway', short: 'NUIG', country: 'Ireland' },
-  { name: 'University of Waikato', short: 'UoW', country: 'New Zealand' },
-  { name: 'Vellore Institute of Technology', short: 'VIT', country: 'India' },
-]
-
-function Clients() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Students from top universities trust us
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <ul
-          role="list"
-          className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
-        >
-          {clients.map((client) => (
-            <li key={client.name}>
-              <FadeIn>
-                <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-5 transition hover:border-violet-200 hover:bg-violet-50">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-xl text-sm font-bold text-white"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%)',
-                    }}
-                  >
-                    {client.short}
-                  </div>
-                  <div className="text-center">
-                    <p className="text-xs font-semibold text-neutral-950 leading-tight">
-                      {client.name}
-                    </p>
-                    <p className="mt-1 text-xs text-neutral-500">
-                      {client.country}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
-  )
-}
-
 export const metadata = {
   title: 'Our Work',
   description:
@@ -150,6 +93,7 @@ export const metadata = {
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
+  let blogArticles = (await loadArticles()).slice(0, 2)
 
   return (
     <RootLayout>
@@ -166,20 +110,12 @@ export default async function Work() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
-  className="mt-24 sm:mt-32 lg:mt-40"
-  client={{
-    name: 'Anonymous Student',
-    university: 'Vellore Institute of Technology, India',
-  }}
->
-  UpthriveWork delivered my full stack project with exceptional quality.
-  The code was clean, well documented, and my supervisor was thoroughly
-  impressed. I went from struggling with deadlines to submitting my best
-  work ever. Highly recommend to every student.
-</Testimonial>
-
-      <Clients />
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="From our blog"
+        intro="Stay up to date with the latest tips, guides, and insights from our team of experts — designed to help students navigate academic and technical challenges with confidence."
+        pages={blogArticles}
+      />
 
       <ContactSection />
     </RootLayout>
