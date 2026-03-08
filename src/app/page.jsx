@@ -448,7 +448,7 @@ export default async function Home() {
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{
-          name: 'Anonymous Student',
+          name: 'Anonymous',
           university: 'Vellore Institute of Technology, India',
         }}
       >

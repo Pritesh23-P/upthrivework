@@ -47,6 +47,7 @@ export function Logomark({ filled = false, invert = false, ...props }) {
 
 export function Logo({
   className,
+  invert = false,
   filled = false,
   fillOnHover = false,
   ...props
