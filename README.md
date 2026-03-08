@@ -1,36 +1,65 @@
-# Studio
+# UpthriveWork
 
-Studio is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+**Where Student Ambition Meets Expert Execution.**
 
-## Getting started
+UpthriveWork is a premium academic and technical service platform designed to help students and professionals excel. We deliver high-quality, original, and timely solutions across full-stack development, AI/ML, and academic assignments.
 
-To get started with this template, first install the npm dependencies:
+## 🚀 Core Services
 
-```bash
-npm install
-```
+- **Full Stack Projects**: Complete, production-ready web applications (frontend, backend, database, deployment).
+- **AI/ML Projects**: Intelligent models, data pipelines, and research-grade implementations.
+- **Academic Assignments**: 100% original, plagiarism-free assignments across all subjects.
+- **Professional Presentations**: Stunning, well-structured designs for seminars, vivas, and pitches.
+- **Custom Academic Help**: Research papers, dissertations, case studies, and exam prep.
 
-Next, run the development server:
+## 🛠️ Tech Stack
 
-```bash
-npm run dev
-```
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Database**: [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
+- **Content**: [MDX](https://mdxjs.com/) for Case Studies & Blog
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+## 🏁 Getting Started
 
-## Customizing
+### Prerequisites
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+- Node.js 18+ 
+- MongoDB instance (local or Atlas)
 
-## License
+### Installation
 
-This site template is a commercial product and is licensed under the [Tailwind Plus license](https://tailwindcss.com/plus/license).
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd studio-js
+   ```
 
-## Learn more
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-To learn more about the technologies used in this site template, see the following resources:
+3. Set up environment variables:
+   Create a `.env.local` file and add your MongoDB URI:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   ```
 
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Framer Motion](https://www.framer.com/docs/) - the official Framer Motion documentation
-- [MDX](https://mdxjs.com/) - the official MDX documentation
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+## 💎 Why UpthriveWork?
+
+- **On-Time Delivery**: Guaranteed submission before your deadline.
+- **100% Original**: Built from scratch with plagiarism reports on request.
+- **24/7 Support**: Global assistance via WhatsApp and Email.
+- **Expert Mentors**: Work delivered by industry-experienced developers and data scientists.
+
+---
+Built with ❤️ by the UpthriveWork Team.
