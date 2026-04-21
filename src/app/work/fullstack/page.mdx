@@ -1,0 +1,65 @@
+import logo from '@/images/clients/family-fund/logomark-dark.svg'
+import imageHero from './hero.jpg'
+import imageDebraFiscal from './debra-fiscal.jpg'
+
+export const caseStudy = {
+  client: 'MIT',
+  title: 'From idea to deployment in under two weeks',
+  description:
+    'A final year computer science student at MIT needed a complete full stack web application built to production standards — with authentication, database, and deployment all included.',
+  summary: [
+    'A final year computer science student at MIT needed a complete full stack web application built to production standards — with authentication, database, and deployment all included.',
+    'Our team delivered a fully functional, documented, and deployed application within the deadline, earning the student top marks in their capstone project.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023-01',
+  service: 'Full Stack Development',
+  testimonial: {
+    author: { name: 'James Carter', role: 'CS Student, MIT' },
+    content:
+      'UpthriveWork Hub delivered my full stack project ahead of schedule. The code quality was outstanding and my supervisor was genuinely impressed. I could not have asked for better support.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+A final year computer science student at MIT approached UpthriveWork Hub with a challenging capstone project requirement — a fully functional, production-ready full stack web application to be submitted within two weeks.
+
+The project required a responsive frontend, a RESTful backend API, a relational database, user authentication, and cloud deployment — all documented to academic standards set by the university.
+
+Our team assigned a senior full stack developer who worked closely with the student to understand the project requirements, preferred tech stack, and submission guidelines provided by the faculty.
+
+The final application was delivered three days ahead of the deadline — fully functional, thoroughly documented, and deployed on a live server ready for demonstration to the academic panel.
+
+## What we did
+
+<TagList>
+  <TagListItem>Frontend (React)</TagListItem>
+  <TagListItem>Backend (Node.js)</TagListItem>
+  <TagListItem>Database (PostgreSQL)</TagListItem>
+  <TagListItem>Authentication (JWT)</TagListItem>
+  <TagListItem>Cloud Deployment</TagListItem>
+  <TagListItem>Documentation</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'James Carter', role: 'CS Student, MIT' }}
+  image={{ src: imageDebraFiscal }}
+>
+  UpthriveWork Hub delivered my full stack project ahead of schedule. The code
+  quality was outstanding and my supervisor was genuinely impressed. I could
+  not have asked for better support.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="3 Days" label="Ahead of deadline" />
+  <StatListItem value="100%" label="Project requirements met" />
+  <StatListItem value="A+" label="Final grade received" />
+  <StatListItem value="5★" label="Student satisfaction" />
+</StatList>

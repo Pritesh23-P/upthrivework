@@ -1,0 +1,65 @@
+import logo from '@/images/clients/phobia/logomark-dark.svg'
+import imageHero from './hero.jpg'
+import imageJennyWilson from './jenny-wilson.jpg'
+
+export const caseStudy = {
+  client: 'Stanford University',
+  title: 'Research-grade AI model built for a machine learning capstone',
+  description:
+    'A postgraduate student at Stanford University needed a complete AI/ML pipeline — from data preprocessing to model training, evaluation, and a research paper ready for submission.',
+  summary: [
+    'A postgraduate student at Stanford University needed a complete AI/ML pipeline — from data preprocessing to model training, evaluation, and a research paper ready for submission.',
+    'Our ML engineers delivered a well-documented, research-grade implementation that earned the student an A grade and praise from their faculty supervisor.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2022-06',
+  service: 'AI/ML Development',
+  testimonial: {
+    author: { name: 'Sarah Mitchell', role: 'ML Student, Stanford University' },
+    content:
+      'UpthriveWork Hub assigned me an ML engineer who truly understood my research requirements. The model they built was clean, well documented, and my supervisor was thoroughly impressed with the results.',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+A postgraduate student at Stanford University approached UpthriveWork Hub with a demanding AI/ML capstone project — requiring a complete machine learning pipeline built to research-grade standards and submitted within three weeks.
+
+The project required data collection and preprocessing, feature engineering, model selection, training and evaluation, hyperparameter tuning, and a fully written research report documenting the methodology and results.
+
+Our team assigned a dedicated ML engineer with postgraduate research experience who worked closely with the student to align the implementation with the faculty's academic expectations and submission format.
+
+The final deliverable included clean, well-commented Python code, a trained and evaluated model, visualizations of results, and a complete research paper — all delivered five days ahead of the deadline.
+
+## What we did
+
+<TagList>
+  <TagListItem>Data Preprocessing</TagListItem>
+  <TagListItem>Feature Engineering</TagListItem>
+  <TagListItem>Model Training (Python)</TagListItem>
+  <TagListItem>Model Evaluation</TagListItem>
+  <TagListItem>Research Paper</TagListItem>
+  <TagListItem>Documentation</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'Sarah Mitchell', role: 'ML Student, Stanford University' }}
+  image={{ src: imageJennyWilson }}
+>
+  UpthriveWork Hub assigned me an ML engineer who truly understood my research
+  requirements. The model they built was clean, well documented, and my
+  supervisor was thoroughly impressed with the results.
+</Blockquote>
+
+<StatList>
+  <StatListItem value="5 Days" label="Ahead of deadline" />
+  <StatListItem value="97%" label="Model accuracy achieved" />
+  <StatListItem value="A" label="Final grade received" />
+  <StatListItem value="5★" label="Student satisfaction" />
+</StatList>
