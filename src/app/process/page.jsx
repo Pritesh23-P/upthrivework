@@ -225,6 +225,20 @@ export const metadata = {
   title: 'Our Process',
   description:
     'At UpthriveWork Hub we follow a simple, transparent process to deliver high quality academic work on time, every time.',
+  openGraph: {
+    title: 'Our Process - UpthriveWork',
+    description:
+      'Discover how UpthriveWork Hub delivers academic work — from requirement gathering to quality-checked delivery, every step is transparent.',
+    url: 'https://upthrivewerk.com/process',
+  },
+  twitter: {
+    title: 'Our Process - UpthriveWork',
+    description:
+      'Discover our simple 3-step process: Discover, Build, Deliver — transparent academic help every step of the way.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com/process',
+  },
 }
 
 export default function Process() {

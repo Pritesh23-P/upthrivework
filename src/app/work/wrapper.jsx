@@ -14,8 +14,39 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
     .filter(({ metadata }) => metadata !== caseStudy)
     .slice(0, 2)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: caseStudy.title,
+    datePublished: caseStudy.date,
+    dateModified: caseStudy.date,
+    author: [
+      {
+        '@type': 'Organization',
+        name: 'UpthriveWork Hub',
+      },
+    ],
+    publisher: {
+      '@type': 'Organization',
+      name: 'UpthriveWork Hub',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://upthrivewerk.com/icon.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://upthrivewerk.com${caseStudy.href}`,
+    },
+    description: caseStudy.description,
+  }
+
   return (
     <RootLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
           <PageIntro eyebrow="Case Study" title={caseStudy.title} centered>
@@ -48,17 +79,19 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
               </Container>
             </div>
 
-            <div className="border-y border-neutral-200 bg-neutral-100">
-              <div className="mx-auto -my-px max-w-304 bg-neutral-200">
-                <GrayscaleTransitionImage
-                  {...caseStudy.image}
-                  quality={90}
-                  className="w-full"
-                  sizes="(min-width: 1216px) 76rem, 100vw"
-                  priority
-                />
+            {caseStudy.image && (
+              <div className="border-y border-neutral-200 bg-neutral-100">
+                <div className="mx-auto -my-px max-w-304 bg-neutral-200">
+                  <GrayscaleTransitionImage
+                    {...caseStudy.image}
+                    quality={90}
+                    className="w-full"
+                    sizes="(min-width: 1216px) 76rem, 100vw"
+                    priority
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </FadeIn>
         </header>
 

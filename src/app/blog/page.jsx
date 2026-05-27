@@ -15,6 +15,20 @@ export const metadata = {
   title: 'Blog',
   description:
     'Explore tips, guides, and insights from the UpthriveWork Hub team to help students excel in their academic journey.',
+  openGraph: {
+    title: 'Blog - UpthriveWork',
+    description:
+      'Explore tips, guides, and insights from the UpthriveWork Hub team to help students excel in their academic journey.',
+    url: 'https://upthrivewerk.com/blog',
+  },
+  twitter: {
+    title: 'Blog - UpthriveWork',
+    description:
+      'Explore tips, guides, and insights from the UpthriveWork Hub team to help students excel in their academic journey.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com/blog',
+  },
 }
 
 export default async function Blog() {
