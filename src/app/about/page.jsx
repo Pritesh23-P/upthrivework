@@ -104,7 +104,7 @@ function Team() {
                       <FadeIn>
                         <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
                           <Image
-                            alt=""
+                            alt={`${person.name} — ${person.role}`}
                             src={person.image.src}
                             width={400}
                             height={400}
@@ -137,6 +137,20 @@ export const metadata = {
   title: 'About Us',
   description:
     'UpthriveWork Hub is a student-focused academic help platform built by experts committed to quality, confidentiality, and on-time delivery.',
+  openGraph: {
+    title: 'About Us - UpthriveWork',
+    description:
+      'Meet the team behind UpthriveWork Hub — academics, developers, and specialists united by one goal: helping students succeed.',
+    url: 'https://upthrivewerk.com/about',
+  },
+  twitter: {
+    title: 'About Us - UpthriveWork',
+    description:
+      'Meet the team behind UpthriveWork Hub — committed to quality, confidentiality, and on-time delivery.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com/about',
+  },
 }
 
 export default async function About() {

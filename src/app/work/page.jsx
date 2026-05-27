@@ -38,7 +38,7 @@ function CaseStudies({ caseStudies }) {
                   <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
                     <Image
                       src={caseStudy.logo}
-                      alt=""
+                      alt={`${caseStudy.client} logo`}
                       className="h-16 w-16 flex-none"
                       unoptimized
                     />
@@ -141,6 +141,20 @@ export const metadata = {
   title: 'Our Work',
   description:
     'Explore how UpthriveWork Hub has helped students deliver outstanding academic work across a wide range of subjects and disciplines.',
+  openGraph: {
+    title: 'Our Work - UpthriveWork',
+    description:
+      'Real results for real students — explore our case studies showcasing full stack projects, AI/ML work, and academic deliverables.',
+    url: 'https://upthrivewerk.com/work',
+  },
+  twitter: {
+    title: 'Our Work - UpthriveWork',
+    description:
+      'See how we have helped students deliver outstanding academic projects across subjects and disciplines.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com/work',
+  },
 }
 
 export default async function Work() {

@@ -195,6 +195,20 @@ function Services() {
 export const metadata = {
   description:
     'UpthriveWork is a student-focused hub delivering full stack projects, AI/ML solutions, assignments, presentations, and custom academic help.',
+  openGraph: {
+    title: 'UpthriveWork - Your trusted academic help hub',
+    description:
+      'Expert academic help for students — full stack projects, AI/ML solutions, assignments, presentations, and more. Trusted by students at 100+ universities worldwide.',
+    url: 'https://upthrivewerk.com',
+  },
+  twitter: {
+    title: 'UpthriveWork - Your trusted academic help hub',
+    description:
+      'Expert academic help for students — full stack projects, AI/ML solutions, assignments, and more.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com',
+  },
 }
 
 export default async function Home() {

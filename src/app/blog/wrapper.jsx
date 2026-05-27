@@ -13,8 +13,40 @@ export default async function BlogArticleWrapper({ article, children }) {
     .filter(({ metadata }) => metadata !== article)
     .slice(0, 2)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: [
+      {
+        '@type': 'Person',
+        name: article.author.name,
+        jobTitle: article.author.role,
+      },
+    ],
+    publisher: {
+      '@type': 'Organization',
+      name: 'UpthriveWork Hub',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://upthrivewerk.com/icon.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://upthrivewerk.com${article.href}`,
+    },
+    description: article.description,
+  }
+
   return (
     <RootLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">

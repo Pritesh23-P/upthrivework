@@ -120,6 +120,20 @@ function ContactDetails() {
 export const metadata = {
   title: 'Contact Us',
   description: 'Get in touch with UpthriveWork Hub. We are ready to help you succeed.',
+  openGraph: {
+    title: 'Contact Us - UpthriveWork',
+    description:
+      'Need academic help? Get in touch with UpthriveWork Hub — tell us what you need and we will get back to you right away.',
+    url: 'https://upthrivewerk.com/contact',
+  },
+  twitter: {
+    title: 'Contact Us - UpthriveWork',
+    description:
+      'Need academic help? Get in touch with UpthriveWork Hub — we are ready to help you succeed.',
+  },
+  alternates: {
+    canonical: 'https://upthrivewerk.com/contact',
+  },
 }
 
 export default function Contact() {
